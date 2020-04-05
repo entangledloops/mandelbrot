@@ -79,13 +79,14 @@ class Game : KtxGame<Screen>() {
             return 0xFF0000FF.toInt()
         }
 
-        val pixmap = Pixmap(Gdx.graphics.width, Gdx.graphics.height, Pixmap.Format.RGBA8888)
-        for (x in 0 until pixmap.width) {
-            for (y in 0 until pixmap.height) {
-                pixmap.pixels.putInt(getPixel(x, y))
+        val pixmap = Pixmap(Gdx.graphics.width, Gdx.graphics.height, Pixmap.Format.RGBA8888).apply {
+            for (x in 0 until width) {
+                for (y in 0 until height) {
+                    pixels.putInt(getPixel(x, y))
+                }
             }
+            pixels.rewind()
         }
-        pixmap.pixels.rewind()
 
         return Texture(pixmap)
     }
