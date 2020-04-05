@@ -1,6 +1,6 @@
 @file:JvmName("DesktopLauncher")
 
-package com.mytest
+package com.entangledloops
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration

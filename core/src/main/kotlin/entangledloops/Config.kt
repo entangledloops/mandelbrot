@@ -1,4 +1,4 @@
-package com.mytest
+package com.entangledloops
 
 object Config {
     const val title = "Mandelbrot"

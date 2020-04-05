@@ -1,4 +1,4 @@
-package com.mytest
+package com.entangledloops
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
