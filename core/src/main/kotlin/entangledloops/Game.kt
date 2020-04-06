@@ -27,7 +27,7 @@ class Game : KtxGame<Screen>() {
 
     override fun create() {
         batch = SpriteBatch()
-        img = buildMandelbrotTexture()
+        img = buildJuliaTexture()
 
         Gdx.input.inputProcessor = object : KtxInputAdapter {
             override fun keyDown(keycode: Int): Boolean {
@@ -41,7 +41,7 @@ class Game : KtxGame<Screen>() {
                 }
                 println("iterations: $iterations, power: $power, min: $min, max: $max")
                 img.dispose()
-                img = buildMandelbrotTexture()
+                img = buildJuliaTexture()
                 return true
             }
         }
@@ -62,7 +62,7 @@ class Game : KtxGame<Screen>() {
         batch.dispose()
     }
 
-    fun buildMandelbrotTexture(): Texture {
+    fun buildJuliaTexture(): Texture {
         val range = (max - min).absoluteValue
 
         fun getPixel(x: Int, y: Int): Int {
