@@ -1,6 +1,6 @@
 # Mandelbrot Renderer
 
-This is a simple fractal rendering program written in Kotlin. Here is a rendering of a Julia set seeded with `c = -1.037 + 0.17i`.
+This is a simple fractal rendering program written in Kotlin. Here is a rendering of a Julia set seeded with `c = -1.037 + 0.17i`:
 
 ![Julia](https://github.com/entangledloops/mandelbrot/blob/master/img/julia.png)
 
