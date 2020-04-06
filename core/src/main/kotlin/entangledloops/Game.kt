@@ -69,12 +69,12 @@ class Game : KtxGame<Screen>() {
             val projX = min + ((x.toDouble()/(Gdx.graphics.width-1)) * range)
             val projY = min + ((y.toDouble()/(Gdx.graphics.height-1)) * range)
             val c = Complex(-1.037, 0.17)
-            var xn = Complex(projX, projY)
-            for (i in 0 until iterations) {
-                val prevSeed = xn
-                repeat (power-1) { xn *= prevSeed }
-                xn += c
-                if (xn.mag() > cutoff) return ((255*(i/iterations.toDouble())).toByte().toInt() shl 24) or 0xFF
+            var z = Complex(projX, projY)
+            repeat (iterations) {
+                val base = z
+                repeat (power-1) { z *= base }
+                z += c
+                if (z.mag() > cutoff) return ((255*(it/iterations.toDouble())).toInt() shl 24) or 0xFF
             }
             return 0xFF0000FF.toInt()
         }
