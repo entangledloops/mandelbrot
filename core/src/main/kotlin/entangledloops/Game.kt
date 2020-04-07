@@ -70,9 +70,9 @@ class Game : KtxGame<Screen>() {
             val projY = min + ((y.toDouble()/(Gdx.graphics.height-1)) * range)
             val c = Complex(-1.037, 0.17)
             var z = Complex(projX, projY)
-            repeat (iterations) {
+            repeat(iterations) {
                 val base = z
-                repeat (power-1) { z *= base }
+                repeat(power-1) { z *= base }
                 z += c
                 if (z.mag() > cutoff) return ((255*(it/iterations.toDouble())).toInt() shl 24) or 0xFF
             }
